@@ -47,7 +47,7 @@ public class StateActivity extends AppCompatActivity {
         stodayRecover = findViewById(R.id.stodayRecover);
         stotalDeath = findViewById(R.id.stotalDeath);
         stodayDeath = findViewById(R.id.stodayDeath);
-        stotalTest = findViewById(R.id.stotalTest);
+//        stotalTest = findViewById(R.id.stotalTest);
         TextView sName = findViewById(R.id.sName);
         slist = new ArrayList<StateStats>();
         statePie = findViewById(R.id.statePie);
@@ -77,6 +77,11 @@ public class StateActivity extends AppCompatActivity {
                     List<StateStats> statewise = new ArrayList<>();
                     statewise.addAll((Collection<? extends StateStats>) st.getStatewise());
                     for (int j=0;j<statewise.size();j++){
+//                        if (statewise.get(j).getState().equals("Total")){
+//                            List<StateStats> datewise = new ArrayList<>();
+//                            datewise.addAll((Collection<? extends StateStats>) st.getStatewise());
+//                        }else{
+//                        }
                         if(statewise.get(j).getState().equals(state)){
                             int confirm = Integer.parseInt(statewise.get(j).getConfirmed());
                             int active = Integer.parseInt(statewise.get(j).getActive());
@@ -102,7 +107,6 @@ public class StateActivity extends AppCompatActivity {
                             statePie.startAnimation();
                         }
                     }
-
             }
 
             @Override

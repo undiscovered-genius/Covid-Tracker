@@ -62,10 +62,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.homeViewHolder
                     }else if (textView.getText() == "Statewise Tracker"){
                         Intent display = new Intent(v.getContext(),StateActivity.class);
                         v.getContext().startActivity(display);
+
                     }else if (textView.getText() == "Vaccination Tracker"){
-//                        Intent display = new Intent(v.getContext(),StateActivity.class);
-//                        v.getContext().startActivity(display);
-                        Toast.makeText(v.getContext(),"Comming Soon!",Toast.LENGTH_SHORT).show();
+                        Intent display = new Intent(v.getContext(),VaccinationActivity.class);
+                        v.getContext().startActivity(display);
+//                        Toast.makeText(v.getContext(),"Comming Soon!",Toast.LENGTH_SHORT).show();
                     }
                 }
             });

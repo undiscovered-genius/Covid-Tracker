@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".StateActivity">
+    tools:context=".VaccinationActivity"
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
@@ -15,8 +16,8 @@
             android:id="@+id/icon1"
             android:layout_width="180dp"
             android:layout_height="180dp"
-            android:layout_marginLeft="-70dp"
-            android:src="@drawable/corona1"
+            android:layout_marginLeft="-30dp"
+            android:src="@drawable/vaccination"
             android:layout_alignParentBottom="true"/>
         <ImageView
             android:layout_width="150dp"
@@ -37,18 +38,15 @@
                 android:text="@string/app_name"
                 android:textColor="#fff" />
             <TextView
-                android:id="@+id/sName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/title_size3"
-                android:text="Maharashtra"
+                android:text="Vaccination"
                 android:textStyle="bold"
                 android:layout_marginTop="6dp"
-                android:textColor="#fff"
-                android:drawableRight="@drawable/ic_drop_down"
-                android:drawablePadding="10dp"/>
+                android:textColor="#fff"/>
             <TextView
-                android:id="@+id/stateDate"
+                android:id="@+id/vaccineDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_size0"
@@ -84,12 +82,12 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/yellow" />
+                            android:background="@color/pink" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:text="Confirmed"
+                            android:text="Registered"
                             android:textColor="#fff"
                             android:textSize="@dimen/text_size" />
                     </LinearLayout>
@@ -101,12 +99,12 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/blue_pie" />
+                            android:background="@color/blue" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:text="Active"
+                            android:text="1st Dose"
                             android:textColor="#fff"
                             android:textSize="@dimen/text_size" />
                     </LinearLayout>
@@ -118,35 +116,35 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/green_pie" />
+                            android:background="@color/green" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:text="Recovered"
+                            android:text="2nd Dose"
                             android:textColor="#fff"
                             android:textSize="@dimen/text_size" />
                     </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:background="@color/red_pie" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:text="Deceased"
-                            android:textColor="#fff"
-                            android:textSize="@dimen/text_size" />
-                    </LinearLayout>
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:orientation="horizontal">-->
+<!--                        <View-->
+<!--                            android:layout_width="15dp"-->
+<!--                            android:layout_height="15dp"-->
+<!--                            android:background="@color/red_pie" />-->
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="5dp"-->
+<!--                            android:text="Deceased"-->
+<!--                            android:textColor="#fff"-->
+<!--                            android:textSize="@dimen/text_size" />-->
+<!--                    </LinearLayout>-->
                 </LinearLayout>
                 <org.eazegraph.lib.charts.PieChart
-                    android:id="@+id/statePie"
+                    android:id="@+id/vaccinePie"
                     android:layout_width="140dp"
                     android:layout_height="150dp"
                     android:layout_marginBottom="5dp"
@@ -182,6 +180,13 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_margin="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:textSize="@dimen/title_size"
+                        android:textStyle="bold"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -190,32 +195,34 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/yellow" />
+                            android:background="@color/blue" />
                         <TextView
+                            android:id="@+id/total1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:text="Confirmed"
+                            android:text="1st Dose"
                             android:textColor="?android:attr/textColorPrimary"
                             android:textSize="@dimen/text_size" />
                     </LinearLayout>
-                    <TextView
-                        android:id="@+id/stotalConfirm"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:layout_marginTop="5dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="@dimen/title_size"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:id="@+id/stodayConfirm"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="( +0 )"
-                        android:layout_marginTop="5dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="@dimen/text_size"/>
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@color/green" />
+                        <TextView
+                            android:id="@+id/total2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="2nd Dose"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="@dimen/text_size" />
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
@@ -231,6 +238,13 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_margin="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Frontline"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:textSize="@dimen/title_size"
+                        android:textStyle="bold"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -239,31 +253,34 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/blue_pie" />
+                            android:background="@color/blue" />
                         <TextView
+                            android:id="@+id/front1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:text="Active"
+                            android:text="1st Dose"
                             android:textColor="?android:attr/textColorPrimary"
                             android:textSize="@dimen/text_size" />
                     </LinearLayout>
-                    <TextView
-                        android:id="@+id/stotalActive"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:layout_marginTop="5dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="@dimen/title_size"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:layout_marginTop="5dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="@dimen/text_size"/>
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@color/green" />
+                        <TextView
+                            android:id="@+id/front2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="2nd Dose"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="@dimen/text_size" />
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
@@ -280,6 +297,13 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_margin="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Healthcare"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:textSize="@dimen/title_size"
+                        android:textStyle="bold"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -288,32 +312,93 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/green_pie" />
+                            android:background="@color/blue" />
                         <TextView
+                            android:id="@+id/health1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:text="Recovered"
+                            android:text="1st Dose"
                             android:textColor="?android:attr/textColorPrimary"
                             android:textSize="@dimen/text_size" />
                     </LinearLayout>
-                    <TextView
-                        android:id="@+id/stotalRecover"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:layout_marginTop="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@color/green" />
+                        <TextView
+                            android:id="@+id/health2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="2nd Dose"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="@dimen/text_size" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/card_width"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:strokeColor="?android:attr/textColorPrimary"
+                app:strokeWidth="1dp"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Age 60+"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="@dimen/title_size"
                         android:textStyle="bold"/>
-                    <TextView
-                        android:id="@+id/stodayRecover"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="( +0 )"
-                        android:layout_marginTop="5dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="@dimen/text_size"/>
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@color/blue" />
+                        <TextView
+                            android:id="@+id/sixty1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="1st Dose"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="@dimen/text_size" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@color/green" />
+                        <TextView
+                            android:id="@+id/sixty2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="2nd Dose"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="@dimen/text_size" />
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
@@ -330,6 +415,13 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_margin="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Age 45+"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:textSize="@dimen/title_size"
+                        android:textStyle="bold"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -338,83 +430,37 @@
                         <View
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@color/red" />
+                            android:background="@color/blue" />
                         <TextView
+                            android:id="@+id/fortyfive1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:text="Deceased"
+                            android:text="1st Dose"
                             android:textColor="?android:attr/textColorPrimary"
                             android:textSize="@dimen/text_size" />
                     </LinearLayout>
-                    <TextView
-                        android:id="@+id/stotalDeath"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:layout_marginTop="5dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="@dimen/title_size"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:id="@+id/stodayDeath"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="( +0 )"
-                        android:layout_marginTop="5dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="@dimen/text_size"/>
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@color/green" />
+                        <TextView
+                            android:id="@+id/fortyfive2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="2nd Dose"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textSize="@dimen/text_size" />
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-         <!--   <com.google.android.material.card.MaterialCardView
-                android:layout_width="@dimen/card_width"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                app:strokeColor="?android:attr/textColorPrimary"
-                app:strokeWidth="1dp"
-                android:padding="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_margin="15dp">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:background="@color/pink" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:text="Tested"
-                            android:textColor="?android:attr/textColorPrimary"
-                            android:textSize="@dimen/text_size" />
-                    </LinearLayout>
-                    <TextView
-                        android:id="@+id/stotalTest"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:layout_marginTop="5dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="@dimen/title_size"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:layout_marginTop="5dp"
-                        android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="@dimen/text_size"/>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView> -->
         </GridLayout>
     </ScrollView>
+
 </LinearLayout>
