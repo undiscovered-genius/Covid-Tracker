@@ -28,6 +28,7 @@ public class StateStats {
     private String over60years1stdose;
     private String over60years2nddose;
     private String testedasof;
+    private String source4;
 
     public StateStats(List<StateStats> statewise, List<StateStats> tested, String state, String active, String confirmed, String deaths, String recovered, String deltaconfirmed, String deltarecovered, String deltadeaths, String lastupdatedtime, String updatetimestamp, String totalindividualsregistered, String totalindividualsvaccinated, String firstdoseadministered, String seconddoseadministered, String frontlineworkersvaccinated1stdose){
         this.statewise = statewise;
@@ -247,5 +248,13 @@ public class StateStats {
 
     public void setTestedasof(String testedasof) {
         this.testedasof = testedasof;
+    }
+
+    public String getSource4() {
+        return source4;
+    }
+
+    public void setSource4(String source4) {
+        this.source4 = source4;
     }
 }
