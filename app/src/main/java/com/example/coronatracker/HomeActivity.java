@@ -34,9 +34,13 @@ public class HomeActivity extends AppCompatActivity {
         titles.add("Worldwide Tracker");
         titles.add("Statewise Tracker");
         titles.add("Vaccination Tracker");
+        titles.add("Vaccine Centere");
+        titles.add("Precautions");
         images.add(R.drawable.globe);
         images.add(R.drawable.india);
         images.add(R.drawable.vaccine);
+        images.add(R.drawable.tracker);
+        images.add(R.drawable.precaution);
 
         homeAdapter = new HomeAdapter(this,titles,images);
 

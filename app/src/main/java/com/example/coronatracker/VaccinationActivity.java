@@ -23,7 +23,7 @@ import retrofit2.Response;
 
 public class VaccinationActivity extends AppCompatActivity {
 
-    private TextView total1, total2, front1, front2, health1, health2, sixty1, sixty2, fortyfive1, fortyfive2, vaccineDate ;
+    private TextView total1, total2, front1, front2, health1, health2, sixty1, sixty2, fortyfive1, fortyfive2, vaccineDate, totalRtpcr, todayRtpcr ;
     private PieChart vaccinePie;
 
     @Override
@@ -43,6 +43,8 @@ public class VaccinationActivity extends AppCompatActivity {
         fortyfive2 = findViewById(R.id.fortyfive2);
         vaccineDate = findViewById(R.id.vaccineDate);
         vaccinePie = findViewById(R.id.vaccinePie);
+        totalRtpcr = findViewById(R.id.totalrtpcr);
+        todayRtpcr = findViewById(R.id.todayrtpcr);
 
         ApiStateUtil.getApiState().getStateStats().enqueue(new Callback<StateStats>() {
             @Override
@@ -51,7 +53,7 @@ public class VaccinationActivity extends AppCompatActivity {
                 List<StateStats> vlist = new ArrayList<>();
                 vlist.addAll(vac.getTested());
                 int lst = vlist.size();
-                int registration = 0, dose1=0, dose2=0, fnt1=0, fnt2=0, hlth1=0, hlth2=0, xty1=0, xty2=0, forty1=0, forty2=0;
+                int registration = 0, dose1=0, dose2=0, fnt1=0, fnt2=0, hlth1=0, hlth2=0, xty1=0, xty2=0, forty1=0, forty2=0, ttlrtpcr, tdyrtpcr;
 //                if (vlist.get(lst-1).getTotalindividualsregistered().equals("")){
 //                    registration = Integer.parseInt(vlist.get(lst-2).getTotalindividualsregistered());
 //                    dose1 = Integer.parseInt(vlist.get(lst-2).getFirstdoseadministered());
@@ -79,12 +81,16 @@ public class VaccinationActivity extends AppCompatActivity {
 //                    forty2 = Integer.parseInt(vlist.get(lst-1).getOver45years2nddose().equals("")?"0":vlist.get(lst-1).getOver45years2nddose());
 //                    vaccineDate.setText("Updated on "+vlist.get(lst-1).getUpdatetimestamp());
 //                }else{
-                    while(vlist.get(lst-1).getSource4().equals("")){ // agar ye kaam nhi kiya toh upper wala uncomment kr dena
+                vaccineDate.setText("Updated on "+vlist.get(lst-1).getUpdatetimestamp());
+                ttlrtpcr = Integer.parseInt(vlist.get(lst-1).getTotalrtpcrsamplescollectedicmrapplication().equals("")?"0":vlist.get(lst-1).getTotalrtpcrsamplescollectedicmrapplication());
+                tdyrtpcr = Integer.parseInt(vlist.get(lst-1).getDailyrtpcrsamplescollectedicmrapplication().equals("")?"0":vlist.get(lst-1).getDailyrtpcrsamplescollectedicmrapplication());
+                dose1 = Integer.parseInt(vlist.get(lst-1).getFirstdoseadministered().equals("")?"0":vlist.get(lst-1).getFirstdoseadministered());
+                dose2 = Integer.parseInt(vlist.get(lst-1).getSeconddoseadministered().equals("")?"0":vlist.get(lst-1).getSeconddoseadministered());
+                    while(vlist.get(lst-1).getTotalindividualsregistered().equals("")){ // agar ye kaam nhi kiya toh upper wala uncomment kr dena
                         lst = lst-1;
                     }
-                    registration = Integer.parseInt(vlist.get(lst-1).getTotalindividualsregistered().equals("")?"0":vlist.get(lst-1).getTotalindividualsregistered());
-                    dose1 = Integer.parseInt(vlist.get(lst-1).getFirstdoseadministered().equals("")?"0":vlist.get(lst-1).getFirstdoseadministered());
-                    dose2 = Integer.parseInt(vlist.get(lst-1).getSeconddoseadministered().equals("")?"0":vlist.get(lst-1).getSeconddoseadministered());
+
+                registration = Integer.parseInt(vlist.get(lst-1).getTotalindividualsregistered().equals("")?"0":vlist.get(lst-1).getTotalindividualsregistered());
                     fnt1 = Integer.parseInt(vlist.get(lst-1).getFrontlineworkersvaccinated1stdose().equals("")?"0":vlist.get(lst-1).getFrontlineworkersvaccinated1stdose());
                     fnt2 = Integer.parseInt(vlist.get(lst-1).getFrontlineworkersvaccinated2nddose().equals("")?"0":vlist.get(lst-1).getFrontlineworkersvaccinated2nddose());
                     hlth1 = Integer.parseInt(vlist.get(lst-1).getHealthcareworkersvaccinated1stdose().equals("")?"0":vlist.get(lst-1).getHealthcareworkersvaccinated1stdose());
@@ -93,7 +99,7 @@ public class VaccinationActivity extends AppCompatActivity {
                     xty2 = Integer.parseInt(vlist.get(lst-1).getOver60years2nddose().equals("")?"0":vlist.get(lst-1).getOver60years2nddose());
                     forty1 = Integer.parseInt(vlist.get(lst-1).getOver45years1stdose().equals("")?"0":vlist.get(lst-1).getOver45years1stdose());
                     forty2 = Integer.parseInt(vlist.get(lst-1).getOver45years2nddose().equals("")?"0":vlist.get(lst-1).getOver45years2nddose());
-                    vaccineDate.setText("Updated on "+vlist.get(lst-1).getUpdatetimestamp());
+
 //                }
 
                 total1.setText(NumberFormat.getInstance().format(dose1));
@@ -106,6 +112,8 @@ public class VaccinationActivity extends AppCompatActivity {
                 sixty2.setText(NumberFormat.getInstance().format(xty2));
                 fortyfive1.setText(NumberFormat.getInstance().format(forty1));
                 fortyfive2.setText(NumberFormat.getInstance().format(forty2));
+                totalRtpcr.setText(NumberFormat.getInstance().format(ttlrtpcr));
+                todayRtpcr.setText("( +"+NumberFormat.getInstance().format(tdyrtpcr)+" )");
 
                 vaccinePie.addPieSlice(new PieModel("Registered",registration,getResources().getColor(R.color.pink)));
                 vaccinePie.addPieSlice(new PieModel("Dose 1",dose1,getResources().getColor(R.color.blue)));

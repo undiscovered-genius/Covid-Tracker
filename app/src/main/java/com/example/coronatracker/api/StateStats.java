@@ -29,6 +29,8 @@ public class StateStats {
     private String over60years2nddose;
     private String testedasof;
     private String source4;
+    private String dailyrtpcrsamplescollectedicmrapplication;
+    private String totalrtpcrsamplescollectedicmrapplication;
 
     public StateStats(List<StateStats> statewise, List<StateStats> tested, String state, String active, String confirmed, String deaths, String recovered, String deltaconfirmed, String deltarecovered, String deltadeaths, String lastupdatedtime, String updatetimestamp, String totalindividualsregistered, String totalindividualsvaccinated, String firstdoseadministered, String seconddoseadministered, String frontlineworkersvaccinated1stdose){
         this.statewise = statewise;
@@ -256,5 +258,21 @@ public class StateStats {
 
     public void setSource4(String source4) {
         this.source4 = source4;
+    }
+
+    public String getDailyrtpcrsamplescollectedicmrapplication() {
+        return dailyrtpcrsamplescollectedicmrapplication;
+    }
+
+    public void setDailyrtpcrsamplescollectedicmrapplication(String dailyrtpcrsamplescollectedicmrapplication) {
+        this.dailyrtpcrsamplescollectedicmrapplication = dailyrtpcrsamplescollectedicmrapplication;
+    }
+
+    public String getTotalrtpcrsamplescollectedicmrapplication() {
+        return totalrtpcrsamplescollectedicmrapplication;
+    }
+
+    public void setTotalrtpcrsamplescollectedicmrapplication(String totalrtpcrsamplescollectedicmrapplication) {
+        this.totalrtpcrsamplescollectedicmrapplication = totalrtpcrsamplescollectedicmrapplication;
     }
 }
