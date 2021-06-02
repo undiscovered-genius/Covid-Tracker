@@ -68,9 +68,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.homeViewHolder
                         v.getContext().startActivity(display);
 //                        Toast.makeText(v.getContext(),"Comming Soon!",Toast.LENGTH_SHORT).show();
                     }else if (textView.getText() == "Vaccine Centere"){
-//                        Intent display = new Intent(v.getContext(),StateActivity.class);
-//                        v.getContext().startActivity(display);
-                        Toast.makeText(v.getContext(),"Comming Soon!",Toast.LENGTH_SHORT).show();
+                        Intent display = new Intent(v.getContext(),CentreActivity.class);
+                        v.getContext().startActivity(display);
+//                        Toast.makeText(v.getContext(),"Comming Soon!",Toast.LENGTH_SHORT).show();
 
                     }else if (textView.getText() == "Precautions"){
                         Intent display = new Intent(v.getContext(),PrecautionActivity.class);

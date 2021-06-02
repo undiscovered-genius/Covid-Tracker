@@ -3,8 +3,7 @@
 
 ## API :
 ### For Worldwide Tracking - https://corona.lmao.ninja/v2/countries
-### For Indian Statewise Tracking - https://api.covid19india.org/data.json
-###                               - https://github.com/covid19india/api
+### For Indian Statewise Tracking - https://api.covid19india.org/data.json , https://github.com/covid19india/api
 
 ## Libraries Used :
 ### Glide(image loading) - https://github.com/bumptech/glide
@@ -16,10 +15,7 @@
 <img src = "app\src\main\res\drawable-v24\logo.png" width="100">
 
 ## App Appearance :
-<img src = "app\src\main\res\drawable-v24\ss1.jpg" width="300">
-<img src = "app\src\main\res\drawable-v24\ss2.jpg" width="300">
-<img src = "app\src\main\res\drawable-v24\ss3.jpg" width="300">
-<img src = "app\src\main\res\drawable-v24\ss4.jpg" width="300">
-<img src = "app\src\main\res\drawable-v24\ss5.jpg" width="300">
-<img src = "app\src\main\res\drawable-v24\ss6.jpg" width="300">
-<img src = "app\src\main\res\drawable-v24\ss7.jpg" width="300">
+<p> <img src = "app\src\main\res\drawable-v24\ss1.jpg" width="300">  <img src = "app\src\main\res\drawable-v24\ss2.jpg" width="300"> </p>
+<p> <img src = "app\src\main\res\drawable-v24\ss3.jpg" width="300">  <img src = "app\src\main\res\drawable-v24\ss4.jpg" width="300"> </p>
+<p> <img src = "app\src\main\res\drawable-v24\ss5.jpg" width="300">  <img src = "app\src\main\res\drawable-v24\ss6.jpg" width="300"> </p>
+<img src = "app\src\main\res\drawable-v24\ss7.jpg" width="300"> 
