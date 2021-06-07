@@ -14,9 +14,10 @@ public class CentreStats {
     private String available_capacity_dose2;
     private String vaccine;
     private String min_age_limit;
-    private List<CentreStats> slots;
+//    private List<CentreStats> slots;
+    private String[] slots;
 
-    public CentreStats(List<CentreStats> sessions, String name, String date, String fee, String from, String to, String available_capacity, String available_capacity_dose1, String available_capacity_dose2, String vaccine, String min_age_limit, List<CentreStats> slots) {
+    public CentreStats(List<CentreStats> sessions, String name, String date, String fee, String from, String to, String available_capacity, String available_capacity_dose1, String available_capacity_dose2, String vaccine, String min_age_limit, String[] slots) {
         this.sessions = sessions;
         this.name = name;
         this.date = date;
@@ -119,11 +120,19 @@ public class CentreStats {
         this.min_age_limit = min_age_limit;
     }
 
-    public List<CentreStats> getSlots() {
+    public String[] getSlots() {
         return slots;
     }
 
-    public void setSlots(List<CentreStats> slots) {
+    public void setSlots(String[] slots) {
         this.slots = slots;
     }
+
+//    public List<CentreStats> getSlots() {
+//        return slots;
+//    }
+//
+//    public void setSlots(List<CentreStats> slots) {
+//        this.slots = slots;
+//    }
 }

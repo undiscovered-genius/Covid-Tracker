@@ -48,7 +48,7 @@ public class CentreAdater extends RecyclerView.Adapter<CentreAdater.centreViewHo
         viewHolder.centre.setText(name.get(position));
         viewHolder.vac.setText(vaccine.get(position));
         viewHolder.fee.setText(fee.get(position));
-        viewHolder.age.setText(age.get(position));
+        viewHolder.age.setText(age.get(position)+"+");
         viewHolder.dose.setText(dose.get(position));
         viewHolder.dose1.setText(dose1.get(position));
         viewHolder.dose2.setText(dose2.get(position));

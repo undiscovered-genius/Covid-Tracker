@@ -10,8 +10,8 @@
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#343444"
+        android:layout_height="250dp"
+        android:background="@drawable/campusvaccinations4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
+            android:gravity="left"
             android:orientation="vertical">
 
             <TextView
@@ -31,39 +31,39 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:text="Find Slot with PINCODE"
-                android:textColor="#2196F3"
+                android:textColor="@color/white"
                 android:textSize="@dimen/title_size2"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/pincode"
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="left"
                 android:layout_margin="10dp"
                 android:hint="Enter Pincode"
                 android:inputType="number"
                 android:paddingLeft="12dp"
-                android:textColor="#2196F3"
-                android:textColorHint="#74BCF6"
+                android:textColor="@color/white"
+                android:textColorHint="#F6FAFB"
                 android:textSize="@dimen/text_size"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/vacDate"
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="left"
                 android:layout_margin="8dp"
                 android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
                 android:drawablePadding="10dp"
                 android:hint="Select Date"
                 android:inputType="date"
                 android:padding="10dp"
-                android:textColor="#2196F3"
-                android:textColorHint="#74BCF6"
+                android:textColor="@color/white"
+                android:textColorHint="#F6FAFB"
                 android:textSize="@dimen/text_size"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <Button
                 android:id="@+id/find"
@@ -92,16 +92,23 @@
                android:src="@drawable/covid" /> -->
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/vaccineView"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        tools:listitem="@layout/centre_item_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vaccineView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"/>
+
+    </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
