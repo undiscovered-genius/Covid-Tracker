@@ -157,15 +157,15 @@
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:columnCount="2"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:paddingHorizontal="5dp">
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/card_width"
@@ -525,6 +525,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </GridLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,22 +45,24 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.countryV
 
     @Override
     public void onBindViewHolder(@NonNull countryViewHolder holder, int position) {
-        CountryStats data = list.get(position);
-        holder.countryCases.setText(NumberFormat.getInstance().format(Integer.parseInt(data.getCases())));
-        holder.countryName.setText(data.getCountry());
-        holder.srno.setText(String.valueOf(position+1));
 
-        Map<String, String> img = data.getCountryInfo();
-        Glide.with(context).load(img.get("flag")).into(holder.imageView);
+            CountryStats data = list.get(position);
+            holder.countryCases.setText(NumberFormat.getInstance().format(Integer.parseInt(data.getCases())));
+            holder.countryName.setText(data.getCountry());
+            holder.srno.setText(String.valueOf(position+1));
+            Map<String, String> img = data.getCountryInfo();
+            Glide.with(context).load(img.get("flag")).into(holder.imageView);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, MainActivity.class);
-                intent.putExtra("country",data.getCountry());
-                context.startActivity(intent);
-            }
-        });
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, MainActivity.class);
+                    intent.putExtra("country",data.getCountry());
+                    context.startActivity(intent);
+                }
+            });
+
+
     }
 
     @Override

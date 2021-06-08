@@ -159,9 +159,9 @@
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -416,5 +416,5 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView> -->
         </GridLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

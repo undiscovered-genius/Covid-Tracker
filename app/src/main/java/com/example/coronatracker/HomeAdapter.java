@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,11 +21,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.homeViewHolder
     List<String> titles;
     List<Integer> images;
     LayoutInflater inflater;
+//    Context cxt;
+//    int lastPosition = -1;
 
     public HomeAdapter(Context cxt, List<String> titles, List<Integer> images){
         this.titles = titles;
         this.images = images;
         this.inflater = LayoutInflater.from(cxt);
+//        this.cxt = cxt;
     }
 
     @NonNull
@@ -36,8 +41,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.homeViewHolder
     @Override
     public void onBindViewHolder(@NonNull homeViewHolder holder, int position) {
         homeViewHolder viewHolder = (homeViewHolder) holder;
-        viewHolder.textView.setText(titles.get(position));
-        viewHolder.imageView.setImageResource(images.get(position));
+//        if(viewHolder.getAdapterPosition() > lastPosition){  // Animation
+//            Animation animation = AnimationUtils.loadAnimation(cxt,R.anim.slide_recycleview);
+//            (viewHolder).itemView.startAnimation(animation);
+            viewHolder.textView.setText(titles.get(position));
+            viewHolder.imageView.setImageResource(images.get(position));
+//            lastPosition = viewHolder.getAdapterPosition();
+//        }
+
     }
 
     @Override

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +23,8 @@ public class CentreAdater extends RecyclerView.Adapter<CentreAdater.centreViewHo
     List<String> dose2;
     List<String> time;
     LayoutInflater inflater;
+//    Context context;
+//    int lastposition = -1;
 
     public CentreAdater(Context cxt,List<String> name, List<String> vaccine, List<String> fee, List<String> age, List<String> dose, List<String> dose1, List<String> dose2, List<String> time){
 
@@ -33,6 +37,7 @@ public class CentreAdater extends RecyclerView.Adapter<CentreAdater.centreViewHo
         this.dose2 = dose2;
         this.time = time;
         this.inflater = LayoutInflater.from(cxt);
+//        this.context = cxt;
     }
 
     @NonNull
@@ -45,14 +50,19 @@ public class CentreAdater extends RecyclerView.Adapter<CentreAdater.centreViewHo
     @Override
     public void onBindViewHolder(@NonNull centreViewHolder holder, int position) {
         centreViewHolder viewHolder = (centreViewHolder) holder;
-        viewHolder.centre.setText(name.get(position));
-        viewHolder.vac.setText(vaccine.get(position));
-        viewHolder.fee.setText(fee.get(position));
-        viewHolder.age.setText(age.get(position)+"+");
-        viewHolder.dose.setText(dose.get(position));
-        viewHolder.dose1.setText(dose1.get(position));
-        viewHolder.dose2.setText(dose2.get(position));
-        viewHolder.time.setText(time.get(position));
+//        if (viewHolder.getAdapterPosition() > lastposition){
+//            Animation animation = AnimationUtils.loadAnimation(context,R.anim.slide_recycleview);
+//            (viewHolder).itemView.startAnimation(animation);
+            viewHolder.centre.setText(name.get(position));
+            viewHolder.vac.setText(vaccine.get(position));
+            viewHolder.fee.setText(fee.get(position));
+            viewHolder.age.setText(age.get(position)+"+");
+            viewHolder.dose.setText(dose.get(position));
+            viewHolder.dose1.setText(dose1.get(position));
+            viewHolder.dose2.setText(dose2.get(position));
+            viewHolder.time.setText(time.get(position));
+//            lastposition = viewHolder.getAdapterPosition();
+//        }
     }
 
     @Override
