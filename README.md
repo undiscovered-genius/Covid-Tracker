@@ -16,8 +16,8 @@
 <img src = "app\src\main\res\drawable-v24\logo.png" width="100">
 
 ## App Appearance :
-<p> <img src = "app\src\main\res\drawable-v24\ss1.jpg" width="300">    <img src = "app\src\main\res\drawable-v24\ss2.jpg" width="300"> </p>
-<p> <img src = "app\src\main\res\drawable-v24\ss3.jpg" width="300">    <img src = "app\src\main\res\drawable-v24\ss4.jpg" width="300"> </p>
-<p> <img src = "app\src\main\res\drawable-v24\ss5.jpg" width="300">    <img src = "app\src\main\res\drawable-v24\ss6.jpg" width="300"> </p>
-<p> <img src = "app\src\main\res\drawable-v24\ss7.jpg" width="300">    <img src = "app\src\main\res\drawable-v24\ss8.jpg" width="300"> </p>
+<p> <img src = "app\src\main\res\drawable-v24\ss1.jpg" width="300">    <img src = "app\src\main\res\drawable-v24\ss2.jpg" width="300"> </p><br>
+<p> <img src = "app\src\main\res\drawable-v24\ss3.jpg" width="300">    <img src = "app\src\main\res\drawable-v24\ss4.jpg" width="300"> </p><br>
+<p> <img src = "app\src\main\res\drawable-v24\ss5.jpg" width="300">    <img src = "app\src\main\res\drawable-v24\ss6.jpg" width="300"> </p><br>
+<p> <img src = "app\src\main\res\drawable-v24\ss7.jpg" width="300">    <img src = "app\src\main\res\drawable-v24\ss8.jpg" width="300"> </p><br>
 <img src = "app\src\main\res\drawable-v24\ss9.jpg" width="300"> 
