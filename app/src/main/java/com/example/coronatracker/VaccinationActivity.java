@@ -86,19 +86,40 @@ public class VaccinationActivity extends AppCompatActivity {
                 tdyrtpcr = Integer.parseInt(vlist.get(lst-1).getDailyrtpcrsamplescollectedicmrapplication().equals("")?"0":vlist.get(lst-1).getDailyrtpcrsamplescollectedicmrapplication());
                 dose1 = Integer.parseInt(vlist.get(lst-1).getFirstdoseadministered().equals("")?"0":vlist.get(lst-1).getFirstdoseadministered());
                 dose2 = Integer.parseInt(vlist.get(lst-1).getSeconddoseadministered().equals("")?"0":vlist.get(lst-1).getSeconddoseadministered());
-                    while(vlist.get(lst-1).getTotalindividualsregistered().equals("")){ // agar ye kaam nhi kiya toh upper wala uncomment kr dena
-                        lst = lst-1;
-                    }
 
+                int temp = lst;
+                while(vlist.get(lst-1).getTotalindividualsregistered().equals("")){ // agar ye kaam nhi kiya toh upper wala uncomment kr dena
+                        lst = lst-1;
+                }
                 registration = Integer.parseInt(vlist.get(lst-1).getTotalindividualsregistered().equals("")?"0":vlist.get(lst-1).getTotalindividualsregistered());
-                    fnt1 = Integer.parseInt(vlist.get(lst-1).getFrontlineworkersvaccinated1stdose().equals("")?"0":vlist.get(lst-1).getFrontlineworkersvaccinated1stdose());
-                    fnt2 = Integer.parseInt(vlist.get(lst-1).getFrontlineworkersvaccinated2nddose().equals("")?"0":vlist.get(lst-1).getFrontlineworkersvaccinated2nddose());
-                    hlth1 = Integer.parseInt(vlist.get(lst-1).getHealthcareworkersvaccinated1stdose().equals("")?"0":vlist.get(lst-1).getHealthcareworkersvaccinated1stdose());
-                    hlth2 = Integer.parseInt(vlist.get(lst-1).getHealthcareworkersvaccinated2nddose().equals("")?"0":vlist.get(lst-1).getHealthcareworkersvaccinated2nddose());
-                    xty1 = Integer.parseInt(vlist.get(lst-1).getOver60years1stdose().equals("")?"0":vlist.get(lst-1).getOver60years1stdose());
-                    xty2 = Integer.parseInt(vlist.get(lst-1).getOver60years2nddose().equals("")?"0":vlist.get(lst-1).getOver60years2nddose());
-                    forty1 = Integer.parseInt(vlist.get(lst-1).getOver45years1stdose().equals("")?"0":vlist.get(lst-1).getOver45years1stdose());
-                    forty2 = Integer.parseInt(vlist.get(lst-1).getOver45years2nddose().equals("")?"0":vlist.get(lst-1).getOver45years2nddose());
+
+                lst = temp;
+                while(vlist.get(lst-1).getFrontlineworkersvaccinated1stdose().equals("")){
+                    lst = lst-1;
+                }
+                fnt1 = Integer.parseInt(vlist.get(lst-1).getFrontlineworkersvaccinated1stdose().equals("")?"0":vlist.get(lst-1).getFrontlineworkersvaccinated1stdose());
+                fnt2 = Integer.parseInt(vlist.get(lst-1).getFrontlineworkersvaccinated2nddose().equals("")?"0":vlist.get(lst-1).getFrontlineworkersvaccinated2nddose());
+
+                lst = temp;
+                while(vlist.get(lst-1).getHealthcareworkersvaccinated1stdose().equals("")){
+                    lst = lst-1;
+                }
+                hlth1 = Integer.parseInt(vlist.get(lst-1).getHealthcareworkersvaccinated1stdose().equals("")?"0":vlist.get(lst-1).getHealthcareworkersvaccinated1stdose());
+                hlth2 = Integer.parseInt(vlist.get(lst-1).getHealthcareworkersvaccinated2nddose().equals("")?"0":vlist.get(lst-1).getHealthcareworkersvaccinated2nddose());
+
+                lst = temp;
+                while(vlist.get(lst-1).getOver60years1stdose().equals("")){
+                    lst = lst-1;
+                }
+                xty1 = Integer.parseInt(vlist.get(lst-1).getOver60years1stdose().equals("")?"0":vlist.get(lst-1).getOver60years1stdose());
+                xty2 = Integer.parseInt(vlist.get(lst-1).getOver60years2nddose().equals("")?"0":vlist.get(lst-1).getOver60years2nddose());
+
+                lst = temp;
+                while(vlist.get(lst-1).getOver45years1stdose().equals("")){
+                    lst = lst-1;
+                }
+                forty1 = Integer.parseInt(vlist.get(lst-1).getOver45years1stdose().equals("")?"0":vlist.get(lst-1).getOver45years1stdose());
+                forty2 = Integer.parseInt(vlist.get(lst-1).getOver45years2nddose().equals("")?"0":vlist.get(lst-1).getOver45years2nddose());
 
 //                }
 
@@ -115,7 +136,7 @@ public class VaccinationActivity extends AppCompatActivity {
                 totalRtpcr.setText(NumberFormat.getInstance().format(ttlrtpcr));
                 todayRtpcr.setText("( +"+NumberFormat.getInstance().format(tdyrtpcr)+" )");
 
-                vaccinePie.addPieSlice(new PieModel("Registered",registration,getResources().getColor(R.color.pink)));
+                vaccinePie.addPieSlice(new PieModel("Registered",registration,getResources().getColor(R.color.violet)));
                 vaccinePie.addPieSlice(new PieModel("Dose 1",dose1,getResources().getColor(R.color.blue)));
                 vaccinePie.addPieSlice(new PieModel("Dose 2",dose2,getResources().getColor(R.color.green)));
                 vaccinePie.startAnimation();
