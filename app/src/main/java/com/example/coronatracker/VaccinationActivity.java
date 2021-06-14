@@ -81,13 +81,34 @@ public class VaccinationActivity extends AppCompatActivity {
 //                    forty2 = Integer.parseInt(vlist.get(lst-1).getOver45years2nddose().equals("")?"0":vlist.get(lst-1).getOver45years2nddose());
 //                    vaccineDate.setText("Updated on "+vlist.get(lst-1).getUpdatetimestamp());
 //                }else{
+                int temp = lst;
                 vaccineDate.setText("Updated on "+vlist.get(lst-1).getUpdatetimestamp());
+
+                lst = temp;
+                while(vlist.get(lst-1).getTotalrtpcrsamplescollectedicmrapplication().equals("")){ // agar ye kaam nhi kiya toh upper wala uncomment kr dena
+                    lst = lst-1;
+                }
                 ttlrtpcr = Integer.parseInt(vlist.get(lst-1).getTotalrtpcrsamplescollectedicmrapplication().equals("")?"0":vlist.get(lst-1).getTotalrtpcrsamplescollectedicmrapplication());
+
+                lst = temp;
+                while(vlist.get(lst-1).getDailyrtpcrsamplescollectedicmrapplication().equals("")){ // agar ye kaam nhi kiya toh upper wala uncomment kr dena
+                    lst = lst-1;
+                }
                 tdyrtpcr = Integer.parseInt(vlist.get(lst-1).getDailyrtpcrsamplescollectedicmrapplication().equals("")?"0":vlist.get(lst-1).getDailyrtpcrsamplescollectedicmrapplication());
+
+                lst = temp;
+                while(vlist.get(lst-1).getFirstdoseadministered().equals("")){ // agar ye kaam nhi kiya toh upper wala uncomment kr dena
+                    lst = lst-1;
+                }
                 dose1 = Integer.parseInt(vlist.get(lst-1).getFirstdoseadministered().equals("")?"0":vlist.get(lst-1).getFirstdoseadministered());
+
+                lst = temp;
+                while(vlist.get(lst-1).getSeconddoseadministered().equals("")){ // agar ye kaam nhi kiya toh upper wala uncomment kr dena
+                    lst = lst-1;
+                }
                 dose2 = Integer.parseInt(vlist.get(lst-1).getSeconddoseadministered().equals("")?"0":vlist.get(lst-1).getSeconddoseadministered());
 
-                int temp = lst;
+                lst = temp;
                 while(vlist.get(lst-1).getTotalindividualsregistered().equals("")){ // agar ye kaam nhi kiya toh upper wala uncomment kr dena
                         lst = lst-1;
                 }

@@ -8,7 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.Toast;
+
+import com.mahfa.dnswitch.DayNightSwitch;
+import com.mahfa.dnswitch.DayNightSwitchListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     HomeAdapter homeAdapter;
     RecyclerView recyclerView;
     SwitchCompat switchCompat;
+    DayNightSwitch dayNightSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         switchCompat = findViewById(R.id.modeSwitch);
+//        dayNightSwitch = findViewById(R.id.modeSwitch);
         recyclerView = findViewById(R.id.homeView);
         titles = new ArrayList<>();
         images = new ArrayList<>();
@@ -59,5 +66,14 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
+//        dayNightSwitch.setListener(is_night -> {
+//            if (is_night){
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//                Toast.makeText(HomeActivity.this,"Dark Mode Selected",Toast.LENGTH_SHORT).show();
+//            }else {
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//                Toast.makeText(HomeActivity.this,"Light Mode Selected",Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 }
